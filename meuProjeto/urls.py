@@ -20,9 +20,9 @@ from .views import home
 from clientes.views import clientes, cliente_detalhe, cliente_nome
 
 urlpatterns = [
+    path('', home),
+    path('admin/', admin.site.urls),
     path('clientes/', clientes),
     url(r'cliente/(?P<id>\d{1,3})/$', cliente_detalhe),
-    url(r'cliente/(?P<nome>\w+)/$', cliente_nome),    
-    path('admin/', admin.site.urls),
-    path('', home)
+    url(r'cliente/(?P<nome>\w+)/$', cliente_nome),
 ]
